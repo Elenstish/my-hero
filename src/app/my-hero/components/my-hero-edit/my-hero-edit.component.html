@@ -1,10 +1,10 @@
-<h3 class="pt-4">You are updating {{name}}</h3>
+<h3 class="pt-4">You are updating strength here</h3>
 
 <div class="d-flex">
-  <button type="button" class="btn btn-outline-primary mr-3" (click)="onChangeStrength(- 1)">-</button>
+  <button type="button" class="btn btn-outline-primary mr-3" (click)="onDecrStrength()">-</button>
   <div class="mr-3">Strength</div>
   <div>{{strength}}</div>
-  <button type="button" class="btn btn-outline-primary ml-3" (click)="onChangeStrength(+ 1)">+</button>
+  <button type="button" class="btn btn-outline-primary ml-3" (click)="onIncrStrength()">+</button>
 </div>
 
 <button type="button" class="btn mt-4 btn-outline-primary" (click)="onSubmit()">Submit</button>

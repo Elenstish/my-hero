@@ -10,7 +10,7 @@
     <button type="button" class="btn btn-primary ml-3">{{myHeroDetails.health}}</button>
   </div>
 
-  <app-my-hero-edit [myHero]="myHeroDetails"
+  <app-my-hero-edit [strength]="myHeroDetails.strength"
                     (strengthUpdate)="checkStrengthUpdate($event)">
   </app-my-hero-edit>
 </section>

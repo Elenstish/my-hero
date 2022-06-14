@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {changeHeroDetailAction, getHeroDetailAction} from "../actions/my-hero.action";
-import {Observable} from "rxjs";
-import {MyHeroInterface} from "../models/my-hero.model";
-import {selectHeroDetails} from "../selectors/my-hero.selectors";
-import {MyHeroState} from "../models/my-hero-state.model";
+import { select, Store } from '@ngrx/store';
+import { changeHeroDetailAction, getHeroDetailAction } from '../actions/my-hero.action';
+import { Observable } from 'rxjs';
+import { MyHeroInterface } from '../models/my-hero.model';
+import { selectHeroDetails } from '../selectors/my-hero.selectors';
+import { MyHeroState } from '../models/my-hero-state.model';
 
 @Injectable({
   providedIn: 'root'

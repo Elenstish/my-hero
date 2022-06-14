@@ -1,12 +1,10 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
   Output
 } from '@angular/core';
-import {MyHeroInterface} from "../../store/models/my-hero.model";
 
 @Component({
   selector: 'app-my-hero-edit',
@@ -15,24 +13,21 @@ import {MyHeroInterface} from "../../store/models/my-hero.model";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MyHeroEditComponent {
-  @Input()
-  set myHero(hero: MyHeroInterface) {
-    this.name = hero.name;
-    this.strength = hero.strength;
-  };
   @Output() strengthUpdate: EventEmitter<number> = new EventEmitter();
+  @Input() strength!: number;
 
-  public name!: string;
-  public strength!: number;
+  public onDecrStrength(): void {
+    if (!this.strength) {
+      return;
+    }
+    this.strength = this.strength - 1;
+  }
 
-  constructor(private cdr: ChangeDetectorRef) { }
-
-  public onChangeStrength(isStrength: number): void {
-    this.strength = this.strength + isStrength;
+  public onIncrStrength(): void {
+    this.strength = this.strength + 1;
   }
 
   public onSubmit(): void {
-    this.cdr.markForCheck();
     this.strengthUpdate.emit(this.strength);
   }
 }

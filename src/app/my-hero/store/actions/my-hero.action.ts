@@ -1,13 +1,11 @@
-import {createAction, props} from '@ngrx/store';
-import {MyHeroInterface} from "../models/my-hero.model";
+import { createAction, props } from '@ngrx/store';
+import { MyHeroInterface } from '../models/my-hero.model';
 
 export const myHeroTypes = {
     getHero: '[Hero] Get Hero Details',
     getHeroSuccess: '[Hero] Get Hero Details Success',
     getHeroFailure: '[Hero] Get Hero Details Failure',
-    changeHero: '[Hero] Change Hero Strength',
-    changeHeroSuccess: '[Hero] Change Hero Strength Success',
-    changeHeroFailure: '[Hero] Change Hero Strength Failure',
+    changeHero: '[Hero] Change Hero Strength'
 };
 
 export const getHeroDetailAction = createAction(myHeroTypes.getHero);
