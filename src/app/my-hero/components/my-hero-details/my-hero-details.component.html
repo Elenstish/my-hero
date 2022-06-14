@@ -1,0 +1,16 @@
+<section class="container" *ngIf="myHeroDetails$ | async as myHeroDetails">
+  <h1 class="pt-4 pb-2">{{myHeroDetails.name}}</h1>
+
+  <div class="d-flex align-items-center mb-2">
+    <div class="mr-1">Strength</div>
+    <button type="button" class="btn btn-primary ml-3">{{myHeroDetails.strength}}</button>
+  </div>
+  <div class="d-flex align-items-center">
+    <div class="mr-3">Health</div>
+    <button type="button" class="btn btn-primary ml-3">{{myHeroDetails.health}}</button>
+  </div>
+
+  <app-my-hero-edit [myHero]="myHeroDetails"
+                    (strengthUpdate)="checkStrengthUpdate($event)">
+  </app-my-hero-edit>
+</section>
