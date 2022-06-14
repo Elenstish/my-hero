@@ -15,11 +15,16 @@ export class MyHeroDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.myHeroStoreService.getMyHeroDetails();
-    this.myHeroDetails$ = this.myHeroStoreService.selectMyHeroDetails();
+    this.subscribeMyHero();
+
   }
 
   public checkStrengthUpdate(updateStrength: number) {
     this.myHeroStoreService.changeMyHeroDetails(updateStrength);
+    this.subscribeMyHero();
+  }
+
+  private subscribeMyHero() {
     this.myHeroDetails$ = this.myHeroStoreService.selectMyHeroDetails();
   }
 
