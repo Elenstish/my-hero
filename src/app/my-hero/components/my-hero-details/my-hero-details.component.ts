@@ -9,23 +9,16 @@ import {Observable} from "rxjs";
   styleUrls: ['./my-hero-details.component.scss']
 })
 export class MyHeroDetailsComponent implements OnInit {
-  myHeroDetails$!: Observable<MyHeroInterface>;
+  public myHeroDetails$!: Observable<MyHeroInterface>;
 
   constructor(private myHeroStoreService: MyHeroStoreService) { }
 
   ngOnInit(): void {
     this.myHeroStoreService.getMyHeroDetails();
-    this.subscribeMyHero();
-
-  }
-
-  public checkStrengthUpdate(updateStrength: number) {
-    this.myHeroStoreService.changeMyHeroDetails(updateStrength);
-    this.subscribeMyHero();
-  }
-
-  private subscribeMyHero() {
     this.myHeroDetails$ = this.myHeroStoreService.selectMyHeroDetails();
   }
 
+  public strengthUpdate(updateStrength: number): void {
+    this.myHeroStoreService.changeMyHeroDetails(updateStrength);
+  }
 }
