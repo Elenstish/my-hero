@@ -12,6 +12,7 @@ import {myHeroReducers} from "./my-hero/store/redusers/my-hero-state.reducers";
 import {MyHeroStateName} from "./my-hero/store/models/my-hero-state.model";
 import {GetHeroDetailEffect} from "./my-hero/store/effects/my-hero.effect";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
     EffectsModule.forRoot([GetHeroDetailEffect]),
     StoreModule.forRoot({ [MyHeroStateName]: combineReducers(myHeroReducers) }),
     StoreDevtoolsModule.instrument()

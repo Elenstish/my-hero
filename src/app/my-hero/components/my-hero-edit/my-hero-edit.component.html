@@ -8,3 +8,14 @@
 </div>
 
 <button type="button" class="btn mt-4 btn-outline-primary" (click)="onSubmit()">Submit</button>
+
+<h3 class="pt-5 pb-3">Reactive Form here</h3>
+
+<form [formGroup]="myHeroForm" (ngSubmit)="onStrengthSubmit()">
+  <input [type]="'number'" class="form-control" placeholder="strength" formControlName="strength">
+  <p *ngIf="myHeroForm.get('strength').hasError('strengthError')">error value</p>
+  <button type="submit" [disabled]="myHeroForm.invalid"
+  class="btn btn-primary mt-3">
+    submit
+  </button>
+</form>
